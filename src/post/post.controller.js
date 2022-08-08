@@ -30,6 +30,18 @@ const createPost = async (req, res) => {
     }
   };
 
+  //edit post
+  // const editPost = async (req, res) => {
+  //   const { userId } = req.params;
+  //   const authUser = req.auth;
+  
+  //   if (authUser.id != userId) {
+  //     return res.send("Gak boleh edit, id ini bukan punyamu");
+  //   }
+  
+  //   return res.send(`Mau edit nama user, id ${userId}`);
+  // };
+
   const postController = {
     getAllPost,
     createPost,

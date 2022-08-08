@@ -8,8 +8,11 @@ const createUser = async ({ fullname, email, password }) => {
   });
 };
 
+
+
 const userRepo = {
   createUser,
+  //editPost
 };
 
 module.exports = userRepo;
