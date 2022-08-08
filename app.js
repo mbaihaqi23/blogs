@@ -10,11 +10,11 @@ const port = process.env.PORT || 8000;
 
 app.use(express.json());
 
-const tokenVerification = require("./src/middleware/token.verification");
+//const tokenVerification = require("./src/middleware/token.verification");
 
-app.get("/", tokenVerification,  (req, res) => {
-  res.send("hello from simple server :)");
-});
+//app.get("/", tokenVerification,  (req, res) => {
+//   res.send("hello from simple server :)");
+// });
 
 app.use(userRouter);
 app.use(authRouter);

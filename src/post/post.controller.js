@@ -21,11 +21,11 @@ const createPost = async (req, res) => {
         body,
         userId,
       });
-      return res.json(recordPost);
+      return console.log(recordPost);
     } catch (error) {
       return res
         .status(500)
-        .json({ message: "gagal!!!, sepertinya ada yang salah" });
+        .json({ message: "salah bro" });
     }
   };
 
