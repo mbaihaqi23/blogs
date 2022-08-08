@@ -11,18 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Posts.belongsTo(models.User, {foreignKey: 'user_id'});
     }
   }
   Posts.init({
     title: DataTypes.STRING,
     image: DataTypes.STRING,
     body: DataTypes.STRING,
-    
+    userId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Posts',
-    paranoid: true,
   });
   return Posts;
 };

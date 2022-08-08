@@ -17,13 +17,9 @@ module.exports = {
       body: {
         type: Sequelize.STRING
       },
-      user_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'User', // name of Target model
-          key: 'id', // key in Target model that we're referencing
+      userId: {
+        type: Sequelize.INTEGER
       },
-    },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
