@@ -10,7 +10,9 @@ const port = process.env.PORT || 8000;
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+const tokenVerification = require("./src/middleware/token.verification");
+
+app.get("/", tokenVerification,  (req, res) => {
   res.send("hello from simple server :)");
 });
 
