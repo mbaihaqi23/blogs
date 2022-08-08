@@ -9,6 +9,9 @@ const postController = require("./post.controller")
 postRouter.get("/posts",  postController.getAllPost);
 
 // API - Create post
-postRouter.post("/posts", postController.createPost);
+postRouter.post("/posts", tokenVerification, postController.createPost);
+
+// API - Edit post
+postRouter.put('/post/:postId', tokenVerification, postController.editPost)
 
 module.exports = postRouter
