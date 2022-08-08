@@ -1,11 +1,15 @@
 const postRepo = require("./post.repo");
 
+const getAllPost = async () => {
+  return await postRepo.getAllPost();
+}
+
 const createPost = async ({ title, image, body, userId }) => {
     return postRepo.createPost({ title, image, body, userId });
   };
 
   const postService = {
-    // getAllPosts,
+    getAllPost,
     createPost,
     //editPost,
   };

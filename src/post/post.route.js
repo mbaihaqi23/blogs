@@ -6,7 +6,7 @@ const postController = require("./post.controller")
 
 
 // API - Get all posts
-// postRouter.get("/posts", postController.getAllPosts);
+postRouter.get("/posts", postController.getAllPost);
 
 // API - Create post
 postRouter.post("/posts", tokenVerification, postController.createPost);
