@@ -31,21 +31,25 @@ const createPost = async (req, res) => {
   };
 
   //edit post
-  // const editPost = async (req, res) => {
-  //   const { userId } = req.params;
-  //   const authUser = req.auth;
-  
-  //   if (authUser.id != userId) {
-  //     return res.send("Gak boleh edit, id ini bukan punyamu");
-  //   }
-  
-  //   return res.send(`Mau edit nama user, id ${userId}`);
-  // };
+const editPost = async (req, res) => {
+  const {postId} = req.params
+  const {writer} = req.query
+  const {title, image, body} = req.body
+  const authUser = req.auth
+
+  if(authUser.id == writer){
+    const editPost = await postService.editPost({title, image, body, postId})
+    return res.json(editPost)
+  }
+
+  return res.send("tidak boleh")
+}
+
 
   const postController = {
     getAllPost,
     createPost,
-    //editPost,
+    editPost,
   };
   
   module.exports = postController;

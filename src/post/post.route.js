@@ -11,7 +11,7 @@ postRouter.get("/posts",  postController.getAllPost);
 // API - Create post
 postRouter.post("/posts", tokenVerification, postController.createPost);
 
-// API - Edit
-postRouter.put('/post/:postId', tokenVerification, postController.editPost)
+//  API - Edit
+// postRouter.put('/post/:postId', tokenVerification, postController.editPost)
 
 module.exports = postRouter

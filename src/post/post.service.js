@@ -8,10 +8,14 @@ const createPost = async ({ title, image, body, userId }) => {
     return postRepo.createPost({ title, image, body, userId });
   };
 
+const editPost = async ({ title, image, body, postId }) => {
+    return await postRepo.editPost({ title, image, body, postId });
+};
+
   const postService = {
     getAllPost,
     createPost,
-    //editPost,
+    editPost,
   };
   
   module.exports = postService;

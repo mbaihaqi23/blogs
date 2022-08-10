@@ -10,10 +10,20 @@ const createPost = async ({ title, image, body, userId }) => {
   };
 
 
+const editPost = async ({ title, image, body, postId }) => {
+    return await Posts.update({ title, image, body},{
+      where: {
+        id: postId
+      },
+      returning: true
+    });
+  };  
+
+
   const postRepo = {
     getAllPost,
     createPost,
-    // editPost,
+    editPost,
   };
   
   module.exports = postRepo
