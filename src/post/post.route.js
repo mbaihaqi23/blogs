@@ -6,12 +6,21 @@ const postController = require("./post.controller")
 
 
 // API - Get all posts
-postRouter.get("/posts",  postController.getAllPost);
+postRouter.get("/post/:postId",  postController.getPostbyId);
+
+// API - Get post by postId
+postRouter.get("/post",  postController.getAllPost);
 
 // API - Create post
-postRouter.post("/posts", tokenVerification, postController.createPost);
+postRouter.post("/post", tokenVerification, postController.createPost);
 
 //  API - Edit
-// postRouter.put('/post/:postId', tokenVerification, postController.editPost)
+postRouter.put('/post/:postId', tokenVerification, postController.editPost)
+
+// API - detail posts
+postRouter.get("/post/:postId",  postController.detailPost);
+
+// API - delete posts
+postRouter.get("/post/:postId",  postController.deletePost);
 
 module.exports = postRouter
