@@ -1,5 +1,4 @@
 const express = require("express");
-const authRouter = require("../auth/auth.route");
 const tokenVerification = require("../middleware/token.verification");
 const registrationValidation = require('../middleware/registration.validation')
 const validate = require('../middleware/validation')
@@ -8,7 +7,7 @@ const userRouter = express.Router();
 const userController = require("./user.controller");
 
 //register page
-userRouter.post('/user/registration', registrationValidation, validate, userController.createUser);
+userRouter.post('/user/registration', userController.createUser);
 
 /**
  * @swagger
