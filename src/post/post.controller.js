@@ -26,23 +26,18 @@ const getPostbyId = async (req, res) => {
 
 //create post
 const createPost = async (req, res) => {
-    const { title, image, body } = req.body;
-    const authUser = req.auth;
-    try {
-      const userId = authUser.id;
-      const recordPost = await postService.createPost({
-        title,
-        image,
-        body,
-        userId,
-      });
-      return console.log(recordPost);
-    } catch (error) {
-      return res
-        .status(500)
-        .json({ message: "salah bro" });
-    }
-  };
+  const authUser = req.auth;
+  const { writer } = req.query;
+  const { title, image, body } = req.body;
+  
+
+  if(authUser.id == writer) {
+      const createdPost = await postService.createPost({title, image, body, user_id: writer})
+      return res.json(createdPost)
+  }
+
+  return res.send("access denied");
+}
 
   //edit post
 const editPost = async (req, res) => {

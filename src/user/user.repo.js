@@ -8,11 +8,16 @@ const createUser = async ({ fullname, email, password }) => {
   });
 };
 
-
+const editUser = async ({id, fullName, email, password}) =>{
+  return await User.update(
+      {id, fullName, email, password},
+      {where: {id}, returning: true}
+  )
+}
 
 const userRepo = {
   createUser,
-  //editPost
+  editUser
 };
 
 module.exports = userRepo;
