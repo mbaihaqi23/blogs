@@ -42,7 +42,7 @@ userRouter.post('/user/registration', registrationValidation, validate, userCont
 
 
 //edit page
-userRouter.put('/user/?userId=', registrationValidation, validate, tokenVerification, userController.editUser);
+userRouter.put('/user', registrationValidation, validate, tokenVerification, userController.editUser);
 
 /**
  * @swagger
