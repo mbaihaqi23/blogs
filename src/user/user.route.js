@@ -7,7 +7,7 @@ const userRouter = express.Router();
 const userController = require("./user.controller");
 
 //register page
-userRouter.post('/user/registration', userController.createUser);
+userRouter.post('/user/registration', registrationValidation, validate, userController.createUser);
 
 /**
  * @swagger
