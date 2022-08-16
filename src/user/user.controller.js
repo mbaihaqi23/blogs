@@ -19,9 +19,9 @@ const createUser = async (req, res) => {
 
 //edit user
 const editUser = async (req, res) => {
-  const { userId } = req.params;
-  const { fullName, email, password } = req.body;
   try {
+    const { userId } = req.params;
+    const { fullName, email, password } = req.body;
       const editedUser = await userService.editUser({ id: userId, fullName, email, password })
       return res.status(200).json(editedUser)
   } catch (error) {
