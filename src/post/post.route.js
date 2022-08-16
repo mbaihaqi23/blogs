@@ -50,7 +50,7 @@ postRouter.get('/post', tokenVerification, postController.getPostbyId);
  *      - bearerAuth : []
  *    tags:
  *      - post
- *    summary: API Get post by postId
+ *    summary: API Get Post From Specific User
  *    parameters:
  *      - in: query
  *        name: writer
@@ -65,10 +65,10 @@ postRouter.get('/post', tokenVerification, postController.getPostbyId);
  *              properties:
  *                title:
  *                  type: string
- *                  example: Judul
+ *                  example: One punch man
  *                body:
  *                  type: string
- *                  example: one puch man
+ *                  example: anime japan
  *                image:
  *                  type: string
  *                  example: image.jpg
